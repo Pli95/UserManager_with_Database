@@ -1,0 +1,48 @@
+html
+  head
+    title User List
+    style
+      include style.css
+  body
+    h1(class="center") Users
+    button(onclick="addUser()") Add Users
+    form(id='search', method='post', action='/user' style="flex-direction: row")
+      input(type='text', name='searchBar', id='searchBar')
+      button Search
+      input(type='hidden', name='button', value='search')
+    table
+      tr
+        th User Id
+          form(id="sortFirstButton", method='post', action='/user')
+            th First Name
+              input(type='hidden', name='button', value='sortFirst')
+              button #{sortFirst}
+          form(id="sortLastButton", method='post', action='/user')
+            th Last Name
+              input(type='hidden', name='button', value='sortLast')
+              button #{sortLast}
+        th(style="vertical-align: top") Email
+        th(style="vertical-align: top") Age
+      each user in dataSet
+        tr
+          each val in user
+            td #{val}
+          td(style="display: flex")
+            div(style='padding: 10px')
+              button(onclick=`editClick("${user._id}")`) Edit
+            form(method='post', action='/user')
+              input(type='hidden', name="button", value="delete")
+              input(type='hidden', name="_id", value=`${user._id}`)
+              button(type="submit", style="background-color:#bb0505") Delete
+      else
+        tr
+          td(colspan="5", style="text-align: center") There are no users
+
+script.
+    function editClick(userId) {
+        window.location.href = '/edit/' + userId
+    }
+    function addUser() {
+        window.location.href = '/'
+    }
+

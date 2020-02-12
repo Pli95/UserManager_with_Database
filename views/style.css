@@ -1,0 +1,38 @@
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+input {
+  font-size: 15px;
+}
+
+form {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+button {
+  display: block;
+  width: 115px;
+  background: #4E9CAF;
+  padding: 10px;
+  margin: 5px;
+  text-align: center;
+  border-radius: 5px;
+  color: white;
+  font-size: 15px;
+  float: right;
+}
+
+.center {
+  width: min-content;
+  margin: auto;
+}
