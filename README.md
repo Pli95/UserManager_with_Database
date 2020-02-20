@@ -1,4 +1,5 @@
 To start the client side:
+-make sure you have mongodb running
 -make sure you're in the UserManager folder in the terminal
 -put node userManager.js inside the terminal
 -make sure the terminal says "listening to port..."
